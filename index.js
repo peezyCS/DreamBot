@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const axios = require("axios");
+const config = require("./config.json");
 const fs = require("fs");
 const prefix = config.prefix;
 const cheerio = require("cheerio");
