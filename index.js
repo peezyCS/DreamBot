@@ -35,21 +35,21 @@ async function bot() {
     let myGuild = client.guilds.cache.get(config["guild"])
     totalMemberChannel = myGuild.channels.cache.get(config["totalMembers"])
     totalMembers = myGuild.memberCount;
-    totalMemberChannel.setName(`Members:${totalMembers}`).then(result=> {
+    totalMemberChannel.setName(`Total Members: ${totalMembers}`).then(result=> {
       return;
     })
   });
 
   client.on("guildMemberAdd", member => {
     ++totalMembers
-    totalMemberChannel.setName(`Members:${totalMembers}`).then(result=> {
+    totalMemberChannel.setName(`Total Members: ${totalMembers}`).then(result=> {
       return;
     })
   })
 
   client.on("guildMemberRemove", member => {
     --totalMembers
-    totalMemberChannel.setName(`Members:${totalMembers}`).then(result=> {
+    totalMemberChannel.setName(`Total Members: ${totalMembers}`).then(result=> {
       return;
     })
   })
